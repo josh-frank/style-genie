@@ -1,0 +1,12 @@
+{
+  "name": "style-genie",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "scripts": {
+    "cli": "node cli.js"
+  },
+  "dependencies": {
+    "css": "^3.0.0"
+  }
+}

@@ -1,0 +1,371 @@
+#gamco-teams-container {
+    background-color: #f5f5f5;
+  }
+  
+  .strategies-container.gamco-teams-strategies {
+    margin-top: 0;
+    padding-top: 1%;
+  }
+  
+  #gamco-teams {
+    width: 90%;
+    position: relative;
+    margin: 0 auto;
+  }
+  
+  .gamco-team-card {
+    display: inline-block;
+    position: relative;
+    width: 31%;
+    margin-right: 2%;
+    text-align: center;
+    transition: .35s ease-in-out;
+    margin-bottom: 50px;
+  }
+  
+  .gamco-team-card:hover .gamco-team-img {
+    opacity: .2;
+    transform: scale(1.05);
+    box-shadow: 0px 15px 10px -15px #111;
+  }
+  
+  .gamco-team-card:hover .gamco-team-name {
+    opacity: 1;
+  }
+  
+  .gamco-team-img {
+    width: 100%;
+    transition: .4s ease-in-out;
+    cursor: pointer;
+    vertical-align: middle;
+  }
+  
+  .gamco-team-overlay {
+    transition: .4s ease-in-out;
+    margin-top: 0;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    cursor: pointer;
+    width: 100%;
+  }
+  
+  .gamco-team-logo {
+    width: 30%;
+    opacity: 0;
+    transition: .4s ease-in-out;
+  }
+  
+  .gamco-team-name {
+    color: #005b97;
+    font-weight: 700;
+    font-size: 250%;
+    font-family: 'Gotham Light';
+    opacity: 0;
+    transition: .4s ease-in-out;
+  }
+  
+  .gamco-team-name.gamco-pm-name {
+    font-size: 165%;
+  }
+  
+  .gamco-pm-title {
+    color: #005b97;
+    font-weight: 700;
+    font-size: 90%;
+    font-family: 'Gotham Light';
+    opacity: 0;
+    transition: .4s ease-in-out;
+  }
+  
+  /* PM Card styles */
+  #gamco-pms, #gamco-leadership {
+    width: 90%;
+    margin: 0 auto;
+    text-align: center
+  }
+  
+  .gamco-pm-card {
+    display: inline-block;
+    position: relative;
+    width: 17%;
+    margin-right: 2%;
+    text-align: center;
+    transition: .35s ease-in-out;
+    margin-bottom: 50px;
+  }
+  
+  .gamco-pm-card:hover .gamco-team-img {
+    opacity: .2;
+    transform: scale(1.05);
+    box-shadow: 0px 15px 10px -15px #111;
+  }
+  
+  .gamco-pm-card:hover .gamco-team-overlay {
+    display: inline-block;
+  
+  }
+  .gamco-pm-card:hover .gamco-team-logo {
+    opacity: 1;
+  }
+  
+  .gamco-pm-card:hover .gamco-team-name {
+    opacity: 1;
+  }
+  
+  .gamco-pm-card:hover .gamco-pm-title {
+    opacity: 1;
+  }
+  
+  .gamco-team-header-text {
+    position: relative;
+    text-shadow: 0 2px 4px black;
+    font-size: 72px;
+    font-weight: 550;
+    color: white;
+    font-family: 'Gotham Light';
+    margin: 0;
+    padding-left: 5%;
+    /* background: url('https://s3.us-east-2.amazonaws.com/gab-images/bluedash.png') */
+    background-color: #005b97;
+  }
+  
+  #gamco-team-profile {
+    position: relative;
+    padding: 0 5% 2%;
+    width: 100%;
+    height: auto;
+    /* min-height: 475px; */
+    overflow: hidden;
+    margin: 0 auto;
+    font-size: 16px;
+    border-bottom: 1px solid LightGray;
+    background-color: white;
+  }
+  
+  #gamco-prof-team-name {
+    color: #005b97;
+    font-size: 26px;
+  }
+  
+  #gamco-prof-team-title {
+    color: #005b97;
+  }
+  
+  #gamco-team-data {
+    color: #005b97;
+    font-family: 'Gotham Light';
+    width: 50%;
+    display: inline-block;
+  }
+  
+  #gamco-pm-data {
+    color: #005b97;
+    font-family: 'Gotham Light';
+    width: 65%;
+    display: inline-block;
+  }
+  
+  #gamco-profile-img-container {
+    float: right;
+    height: auto;
+    margin-right: 20px;
+    text-align: right;
+  }
+  
+  #gamco-profile-img-container.pm-img-container {
+    width: 25%;
+  }
+  
+  #gamco-profile-img-container.team-img-container {
+    width: 40%;
+  }
+  
+  #gamco-profile-img-container img {
+    height: auto;
+    width: 100%;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, .2), 0 6px 20px 0 rgba(0, 0, 0, .2);
+  }
+  
+  #gamco-prof-team-name {
+    display: inline-block;
+    width: auto;
+    margin-right: 1%;
+  }
+  
+  .pm-strat-selector .strat-btn {
+    font-size: 110%;
+  }
+  
+  .pm-strat-selector .strat-btn hr.underline-active.strat-underline{
+    width: 30px;
+  }
+  
+  @media only screen and (min-width: 1400px) {
+    #gamco-team-profile {
+      padding: 0 10% 2%;
+    }
+  
+    .gamco-team-header-text {
+      padding-left: 10%;
+    }
+  }
+  
+  @media only screen and (max-width: 1120px) {
+    .gamco-pm-card {
+      background-color: #005b97;
+      width: 23%;
+      transform: none;
+    }
+  
+    .gamco-team-card {
+      background-color: #005b97;
+      width: 31%;
+      transform: none;
+    }
+  
+    .gamco-team-overlay {
+      top: 70%;
+    }
+  
+    .gamco-team-name {
+      font-size: 135%;
+    }
+  
+    .gamco-team-card .gamco-team-overlay .gamco-team-name {
+      font-size: 30px;
+    }
+  
+    .gamco-team-img {
+      opacity: .5;
+    }
+  
+    .gamco-team-overlay {
+      color: white;
+    }
+  
+    .gamco-team-name {
+      color: white;
+      opacity: 1;
+    }
+  
+    .gamco-pm-title {
+      color: white;
+      opacity: 1;
+    }
+  
+    .gamco-pm-card:hover .gamco-team-img {
+      transform: none;
+      opacity: 1;
+    }
+  
+    .gamco-pm-card:hover .gamco-team-name {
+      opacity: 0;
+    }
+  
+    .gamco-pm-card:hover .gamco-pm-title {
+      opacity: 0;
+    }
+  
+    .gamco-team-card:hover .gamco-team-img {
+      transform: none;
+      opacity: 1;
+    }
+  
+    .gamco-team-card:hover .gamco-team-name {
+      opacity: 0;
+    }
+  }
+  
+  @media only screen and (max-width: 850px) {
+    .gamco-pm-card {
+      width: 31%;
+    }
+  
+    .gamco-team-card {
+      width: 48%;
+    }
+  }
+  
+  @media only screen and (max-width: 550px) {
+  
+    .gamco-pm-card {
+      width: 48%;
+    }
+  
+    #gamco-prof-team-name {
+      display: block;
+    }
+  
+    #gamco-profile-img-container.pm-img-container, #gamco-profile-img-container.team-img-container {
+      width: 100%;
+      margin: 10px 0;
+    }
+  
+    #gamco-team-data {
+      width: 100%;
+      margin-top: 20px;
+      display: block;
+    }
+  
+    #gamco-pm-data {
+      width: 100%;
+      margin-top: 20px;
+      display: block;
+    }
+  
+    .gamco-team-card {
+      width: 100%;
+    }
+  
+    .gamco-team-img {
+      /* height: 80%; */
+      opacity: .3;
+    }
+  
+    .gamco-team-card:hover .gamco-team-img {
+      opacity: 1;
+    }
+  
+  
+    .gamco-team-logo {
+      opacity: 1;
+    }
+  
+    .gamco-team-card:hover .gamco-team-logo {
+      opacity: 0;
+    }
+  
+    .gamco-team-name {
+      opacity: 1;
+    }
+  
+    .gamco-pm-title {
+      opacity: 1;
+    }
+  
+    .gamco-team-card:hover .gamco-team-name {
+      opacity: 0;
+    }
+  
+    .gamco-team-card:hover .gamco-pm-title {
+      opacity: 0;
+    }
+  
+    /* PMs */
+  
+    .gamco-pm-card:hover .gamco-team-img {
+      opacity: 1;
+    }
+  
+  
+    .gamco-pm-card:hover .gamco-team-logo {
+      opacity: 0;
+    }
+  
+    .gamco-pm-card:hover .gamco-team-name {
+      opacity: 0;
+    }
+  
+  }
