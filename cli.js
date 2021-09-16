@@ -10,20 +10,6 @@ const respondToError = error => { if ( error ) { console.log( error ); return } 
 
 const jsify = string => string.split( /\W/g ).map( word => word.charAt( 0 ).toUpperCase() + word.slice( 1 ) ).join( "" );
 
-const writeToFile = ( error, file ) => {
-  respondToError( error );
-  const parsedFile = styleGenie.parse( file );
-  const styledComponentsFromFile = Object.keys( parsedFile ).reduce( ( result, selector ) => [ ...result, `
-export const ${ jsify( selector ) } = styled.div\`${ parsedFile[ selector ] }\`;\n
-  ` ], [ 'import styled from "styled-components"\n' ] );
-  fs.writeFile( `${ new Date().getTime() }-${ args[ 1 ].replace( /\.\w+$/g, "" ) }.js`, styledComponentsFromFile.join( "" ), respondToError );
-};
-
-const testInConsole = ( error, file ) => {
-  respondToError( error );
-  console.log( styleGenie.parse( file ) );
-};
-
 const printHelpMessage = () => {
   console.clear();
   console.log( [
@@ -39,10 +25,20 @@ if ( require.main === module ) {
   const args = process.argv.slice( sliceN, process.argv.length );
   switch ( args[ 0 ] ) {
     case "--w":
-      fs.readFile( args[ 1 ], "utf8", writeToFile );
+      fs.readFile( args[ 1 ], "utf8", ( error, file ) => {
+        respondToError( error );
+        const parsedFile = styleGenie.parse( file );
+        const styledComponentsFromFile = Object.keys( parsedFile ).reduce( ( result, selector ) => [ ...result, `
+export const ${ jsify( selector ) } = styled.div\`${ parsedFile[ selector ] }\`;
+        ` ], [ 'import styled from "styled-components"\n' ] );
+        fs.writeFile( `${ new Date().getTime() }-${ args[ 1 ].replace( /\.\w+$/g, "" ) }.js`, styledComponentsFromFile.join( "" ), respondToError );
+      } );
       break;
     case "--t":
-      fs.readFile( args[ 1 ], "utf8" , testInConsole );
+      fs.readFile( args[ 1 ], "utf8" , ( error, file ) => {
+        respondToError( error );
+        console.log( styleGenie.parse( file ) );
+      } );
       break;
     case "--h":
       printHelpMessage();

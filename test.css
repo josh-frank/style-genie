@@ -1,371 +1,682 @@
-#gamco-teams-container {
-    background-color: #f5f5f5;
+.reports-menu-item {
+  background-color: rgba(255, 255, 255, 0);
+  z-index: 10;
+  position: static;
+}
+
+.main-navbar {
+  top: 0;
+  margin-bottom: 0 !important;
+  min-height: 33px;
+  width: 100%;
+  background-color: #005B97;
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  border-bottom: none;
+}
+/* FUNDs NAVBAR Styling */
+
+.nav-container {
+  margin-top: -1px;
+  z-index: 100;
+}
+
+#page-not-found-container {
+  font-family: 'Gotham Medium', Arial, sans-serif;
+  font-size: 120%;
+  textAlign: center;
+  width: 60%;
+  margin: 20vh auto 30vh auto;
+}
+
+.home-link-404 {
+  color: #00aeef;
+}
+
+.home-link-404:hover {
+  color: #6dcff6;
+}
+
+@media (max-width: 780px){
+  .fund-navbar-web  {
+    display: none;
   }
-  
-  .strategies-container.gamco-teams-strategies {
-    margin-top: 0;
-    padding-top: 1%;
+  .fund-navbar-responsive {
+    display: block
   }
-  
-  #gamco-teams {
-    width: 90%;
-    position: relative;
-    margin: 0 auto;
-  }
-  
-  .gamco-team-card {
+}
+
+.fund-navbar-open-collapse-container {
+  cursor: pointer;
+  position: relative;
+  width: 100%;
+}
+
+.fund-navbar-open-collapse {
+  height: 5px;
+  background-color: #6dcff6;
+}
+
+div#our-company-sites {
+  margin-left: 10px;
+  font-size: 14px;
+  display: inline-block;
+  vertical-align: top;
+  padding-top: 1px;
+  left: 1.5%;
+  position: absolute;
+}
+
+div#cef-meeting-banner {
+  color: #4d545e;
+  font-family: 'Gotham Medium', Arial, sans-serif;
+  background-color: #6dcff6;
+  text-align: center;
+  padding: 5px 0;
+  width: 100%;
+}
+
+div#cef-meeting-banner a:hover {
+  color: #005b97;
+}
+
+div#ann-meeting-banner {
+  color: white;
+  font-family: 'Gotham Medium', Arial, sans-serif;
+  background-color: #00aeef;
+  text-align: center;
+  padding: 5px 0;
+}
+
+div#ann-meeting-banner a:hover {
+  color: #005b97;
+}
+
+div#covid-update-banner {
+  color: white;
+  font-family: 'Gotham Medium', Arial, sans-serif;
+  background-color: red;
+  text-align: center;
+  padding: 5px 0;
+}
+
+.nav-funds-search-icon-container {
+  margin-top: 15px;
+}
+
+.nav-funds-search-icon {
+  height: 20px;
+  margin-top: 3px
+}
+
+#wrap {
+  display: inline-block;
+  position: relative;
+  float: right;
+  padding: 0;
+  bottom: 15px;
+  z-index: 10;
+}
+
+.country-container {
+  display: inline-block;
+  width: auto;
+  vertical-align: top;
+  position: relative;
+}
+
+.site-options:hover {
+  color: #6dcff6;
+  cursor: pointer;
+}
+
+input[type="text"].fund-navbar-search-animated {
+  height: 40px;
+  width: 0px;
+  font-size: 20px;
+  display: inline-block;
+  font-family: 'Gotham Book';
+  /* font-family: "Gotham Light"; */
+  letter-spacing: 0.4px;
+  border: none;
+  outline: none;
+  color: #00aeef;
+  padding-right: 30px;
+  position: relative;
+  background: none;
+  right: 0px;
+  z-index: 3;
+  transition: width .4s cubic-bezier(0.000, 0.795, 0.000, 1.000);
+  cursor: pointer;
+  text-transform: none;
+}
+
+input[type="text"].fund-navbar-search-animated:focus::placeholder {
+  color: #59616c;
+  text-transform: lowercase;
+}
+
+
+input[type="text"].fund-navbar-search-animated:focus {
+  width: 300px;
+  height: 40px;
+  font-size: 15px;
+  z-index: 1;
+  right: 15px;
+  bottom: -5px;
+  background-color: none;
+  padding-top: 10px;
+  cursor: text;
+  border-bottom: 0.5px solid rgba(0,0,0,0.1);
+  text-align: left;
+}
+
+input[type="submit"].fund-navbar-search-animated {
+  height: 55px;
+  width: 35px;
+  display: inline-block;
+  float: right;
+  background: url('https://s3.us-east-2.amazonaws.com/gab-images/search2.svg') center center no-repeat;
+  background-size: 20px;
+  text-indent: -10000px;
+  border: none;
+  position: absolute;
+  /* top: -13px; */
+  right: 0;
+  z-index: 2;
+  cursor: pointer;
+  opacity: 0.6;
+  cursor: pointer;
+  transition: opacity .4s ease;
+}
+
+input[type="submit"].fund-navbar-search-animated:hover {
+  opacity: 0.9;
+}
+
+.country-name {
+  display: none;
+  color: black;
+}
+
+@font-face {
+  font-family: 'Gotham Medium', Arial, sans-serif;
+  font-style: normal;
+  font-weight: normal;
+  src:
+    local('Gotham Medium'),
+    url('../../assets/fonts/Gotham-Medium.otf') format('opentype');
+}
+
+@font-face {
+  font-family: 'Gotham Narrow Medium';
+  /* font-style: normal;
+  font-weight: normal; */
+  src:
+    local('Gotham Narrow Medium'),
+    url('../../assets/fonts/GothamNarrow-Medium.otf') format('opentype');
+}
+
+@font-face {
+  font-family: 'Gotham Book';
+  font-style: normal;
+  font-weight: normal;
+  src:
+    local('Gotham Book'),
+    url('../../assets/fonts/GothamBook.ttf') format('truetype');
+}
+
+.fund-navbar-open-collapse-text {
+  /* background-color: white; */
+  margin-top: 6px;
+  font-family: 'Gotham Book';
+  /* font-family: 'Gotham Light'; */
+  letter-spacing: 0.5px;
+  font-size: 14px;
+  margin-left: 2%;
+  vertical-align: middle;
+  height: 25px;
+  color: #000;
+  display: block;
+  white-space: nowrap;
+  text-align: right;
+}
+
+.fund-navbar-open-collapse-search {
+  display: inline-block;
+  width: auto;
+  text-align: right;
+  padding-right: 1%;
+}
+
+.collapse-search {
+  -ms-grid-column: 1;
+}
+.account-access-container {
+  width: 200px;
+}
+
+.ie-search-bar {
+  padding-right: 10vw;
+}
+
+.fund-navbar-responsive-container {
+  margin-top: 0px;
+}
+
+.fund-navbar-responsive-item {
+  color: #fff;
+  margin-left: 45px;
+  font-family: 'Gotham Book', Helvetica, Arial, sans-serif;
+  font-size: 14px;
+  padding-bottom: 3px;
+}
+
+.fund-navbar-responsive-item:hover {
+  color: #00aeef
+}
+
+.fund-navbar {
+  display: none;
+  position: fixed;
+  height: 325px;
+  top: 23%;
+  right: 0%;
+  padding: 10px;
+  border: 2px solid #005b97;
+  background: #fff;
+  border-radius: 5px;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+  transition: .3 ease-in-out;
+}
+
+.fund-navbtn{
+  border: 1px solid #005b97;
+  padding: 5px;
+  margin: 1% 0 0 0;
+  width: 125px;
+  height: 30px;
+  background: rgba(255,255,255,.8);
+  cursor: pointer;
+  text-align: center;
+  transition: .35s ease-in-out;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+  color: #005b97;
+  font-size: 11px;
+  border-radius: 5px;
+}
+.fund-navbtn:hover{
+  transform: scale(1.02);
+  border: none;
+  border-right: 3px solid #6dcff6;
+  background: #005b97;
+  color: #fff;
+  margin: 2% 0% 0% -9%;
+}
+
+.fund-navbtn:hover::before{
+  transform: scale(1.04);
+  content: "";
+  position: absolute;
+  border: solid 14px transparent;
+  border-right-color: #005b97;
+  left: -23%;
+  top: 0%;
+  z-index: 1;
+}
+.fund-navbar::before{
+  transform: scale(1.04);
+  content: "";
+  position: absolute;
+  border: solid 8px transparent;
+  border-top-color: #a7d2e4;
+  right: 45%;
+  top: 100%;
+  z-index: 1;
+}
+#fundsnav-logo{
+  margin: 1% auto;
+  border: 3px double #005b97;
+  height: 85px;
+  width: 125px;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+  border-radius: 5px;
+  transition: .3s ease-in-out;
+}
+#funds-hide-btn{
+  height: 55px;
+  width: 90px;
+  top: 61.5%;
+  right: 0%;
+  position: fixed;
+  border-right:1px solid #fff;
+  border-left: 1px solid #fff;
+  border-bottom: 1px solid #fff;
+  border-radius: 10px;
+  cursor: pointer;
+  background: rgba(0,91,151,1);
+  padding: 10px;
+  text-align:center;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+}
+
+#links-btn{
+  height: 15px;
+  width: 20px;
+}
+#fundsnav-logo:hover{
+  transform: scale(1.05);
+}
+#link-btn-text{
+  color: white;
+  padding: 5px;
+  font-size: 10px;
+}
+
+.nav-home {
+  float: right;
+  margin-right: 3%;
+  column-count: 6;
+  font-family: 'Gotham Book';
+  font-size: 70%;
+  color: #59616c;
+  margin-top: 1%;
+  margin-bottom: 1%;
+  text-align: center;
+  z-index: 1;
+}
+
+.nav-item {
+  border-top: solid 2px;
+  padding-top: 10%;
+  z-index: 1;
+  cursor: pointer;
+}
+
+#mobile-search-link-container {
+  display: none;
+}
+.nav-funds-mini {
+  display: none
+}
+
+/* navbar for gabelli funds */
+
+@media only screen and (max-width: 768px) {
+
+  #mobile-search-link-container {
     display: inline-block;
     position: relative;
-    width: 31%;
-    margin-right: 2%;
-    text-align: center;
-    transition: .35s ease-in-out;
-    margin-bottom: 50px;
   }
-  
-  .gamco-team-card:hover .gamco-team-img {
-    opacity: .2;
-    transform: scale(1.05);
-    box-shadow: 0px 15px 10px -15px #111;
-  }
-  
-  .gamco-team-card:hover .gamco-team-name {
-    opacity: 1;
-  }
-  
-  .gamco-team-img {
-    width: 100%;
-    transition: .4s ease-in-out;
-    cursor: pointer;
-    vertical-align: middle;
-  }
-  
-  .gamco-team-overlay {
-    transition: .4s ease-in-out;
-    margin-top: 0;
+  .mobile-search-link {
+    bottom: 5px;
     position: absolute;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%);
-    cursor: pointer;
-    width: 100%;
   }
-  
-  .gamco-team-logo {
-    width: 30%;
-    opacity: 0;
-    transition: .4s ease-in-out;
+  .fund-navbar-open-collapse-search {
+    display: none;
   }
-  
-  .gamco-team-name {
-    color: #005b97;
-    font-weight: 700;
-    font-size: 250%;
-    font-family: 'Gotham Light';
-    opacity: 0;
-    transition: .4s ease-in-out;
-  }
-  
-  .gamco-team-name.gamco-pm-name {
-    font-size: 165%;
-  }
-  
-  .gamco-pm-title {
-    color: #005b97;
-    font-weight: 700;
-    font-size: 90%;
-    font-family: 'Gotham Light';
-    opacity: 0;
-    transition: .4s ease-in-out;
-  }
-  
-  /* PM Card styles */
-  #gamco-pms, #gamco-leadership {
-    width: 90%;
-    margin: 0 auto;
-    text-align: center
-  }
-  
-  .gamco-pm-card {
-    display: inline-block;
-    position: relative;
-    width: 17%;
-    margin-right: 2%;
-    text-align: center;
-    transition: .35s ease-in-out;
-    margin-bottom: 50px;
-  }
-  
-  .gamco-pm-card:hover .gamco-team-img {
-    opacity: .2;
-    transform: scale(1.05);
-    box-shadow: 0px 15px 10px -15px #111;
-  }
-  
-  .gamco-pm-card:hover .gamco-team-overlay {
-    display: inline-block;
-  
-  }
-  .gamco-pm-card:hover .gamco-team-logo {
-    opacity: 1;
-  }
-  
-  .gamco-pm-card:hover .gamco-team-name {
-    opacity: 1;
-  }
-  
-  .gamco-pm-card:hover .gamco-pm-title {
-    opacity: 1;
-  }
-  
-  .gamco-team-header-text {
-    position: relative;
-    text-shadow: 0 2px 4px black;
-    font-size: 72px;
-    font-weight: 550;
-    color: white;
-    font-family: 'Gotham Light';
-    margin: 0;
-    padding-left: 5%;
-    /* background: url('https://s3.us-east-2.amazonaws.com/gab-images/bluedash.png') */
-    background-color: #005b97;
-  }
-  
-  #gamco-team-profile {
-    position: relative;
-    padding: 0 5% 2%;
-    width: 100%;
-    height: auto;
-    /* min-height: 475px; */
-    overflow: hidden;
-    margin: 0 auto;
-    font-size: 16px;
-    border-bottom: 1px solid LightGray;
+  .nav-funds-mini {
+    display: grid;
+    grid-template-columns: 10% 78% 10%;
+    column-gap: 0%;
+    padding-bottom: 10px;
+    border-bottom: 0.5px solid rgba(0,0,0,0.1);
     background-color: white;
   }
-  
-  #gamco-prof-team-name {
-    color: #005b97;
-    font-size: 26px;
+
+  input[type="submit"].fund-navbar-search-animated {
+    width: 50px;
   }
-  
-  #gamco-prof-team-title {
-    color: #005b97;
+
+  input[type="text"].fund-navbar-search-animated {
+    right: 10px;
   }
-  
-  #gamco-team-data {
-    color: #005b97;
-    font-family: 'Gotham Light';
-    width: 50%;
-    display: inline-block;
+
+  input[type="text"].fund-navbar-search-animated:focus {
+    right: 80px;
+    width: 250px;
   }
-  
-  #gamco-pm-data {
-    color: #005b97;
-    font-family: 'Gotham Light';
-    width: 65%;
-    display: inline-block;
-  }
-  
-  #gamco-profile-img-container {
-    float: right;
-    height: auto;
-    margin-right: 20px;
+
+  .fund-navbar-open-collapse-search {
+    /* width: 100%; */
     text-align: right;
   }
-  
-  #gamco-profile-img-container.pm-img-container {
-    width: 25%;
+
+  .nav-funds-logo-mini-container {
+    text-align: center;
   }
-  
-  #gamco-profile-img-container.team-img-container {
-    width: 40%;
+
+  .nav-funds-logo-mini {
+    margin-top: 2.5%;
+    width: 153.6px;
+    height: 40.95px;
   }
-  
-  #gamco-profile-img-container img {
+
+  .nav-funds-menu-icon {
+    margin-top: 18px;
+    margin-left: 40%;
+    cursor: pointer;
+  }
+
+  .nav-funds {
+    display: none;
+  }
+
+  .nav-funds-item {
+    display: none;
+  }
+  /* .nav-funds-logo {
+    width: 180%;
+    margin-left: 2%;
+  }
+
+  .nav-funds-menu {
+    float: right;
+    display: block;
+    right: 20px;
+    position: absolute;
+    z-index: 1;
+    margin-top: 2%;
+  } */
+}
+
+
+
+/*  ACCOUNT ACCESS BUTTONS */
+.client-divs {
+  vertical-align: top;
+  display: inline-block;
+  /* position: absolute; */
+  height: 24px !important;
+  width: auto;
+  padding-right: 4.5%;
+  font-size: 11px;
+  right: 1px;
+  /* border-left: 0.5px solid #e0e2e8; */
+}
+
+@media only screen and (max-width: 500px){
+  .main-navbar {
+    /* margin-bottom: 5px !important; */
+    border-bottom: none !important;
+  }
+  div.country-container {
     height: auto;
-    width: 100%;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, .2), 0 6px 20px 0 rgba(0, 0, 0, .2);
+    /* display: inline-block; */
+    display: none;
   }
-  
-  #gamco-prof-team-name {
+  .fund-navbar-open-collapse-search form {
+    position: absolute;
+    right: -135px;
+    top: 40px;
+    z-index: 20;
+    background-color: white;
+  }
+  .fund-navbar-open-collapse-text {
+    margin-left: 0;
+  }
+
+ input[type="text"].fund-navbar-search-animated {
+   right: 0px;
+ }
+
+ input[type="submit"].fund-navbar-search-animated {
+   width: 25px;
+ }
+
+  input[type="text"].fund-navbar-search-animated:focus {
+    width: calc(100vw - 120px);
+    right: 15px;
+  }
+
+  .country-name {
+    display: none;
+  }
+
+  .existing-client,
+  .open-account {
+    font-size: 8px;
+  }
+}
+
+
+
+.client-divs div {
+  display: inline-block;
+  /* font-size: 10px; */
+}
+
+
+.lock {
+  padding-bottom: 2px;
+}
+.lock:hover {
+  display: none;
+}
+
+.login-div {
+  vertical-align: top;
+  position: relative;
+  height: 24px !important;
+  display: inline-block;
+  margin-left: 1%;
+}
+div.existing-client{
+  background-color: #005b97;
+  font-family: 'Gotham Book';
+  letter-spacing: 0.8px;
+  font-weight: bold;
+  width: auto;
+  height: 24px;
+  line-height: 24px;
+  text-align: center;
+  color: #fff;
+  border: 1px solid #005B97;
+  border-radius: 3px;
+  /* float: left; */
+  padding: 0 4%;
+}
+.existing-client:hover {
+  background-color: #fff;
+  color: #005b97;
+}
+div.gamco-login{
+  background-color: #005b97;
+  font-family: 'Gotham Book';
+  letter-spacing: 0.8px;
+  font-weight: bold;
+  width: auto;
+  height: 24px;
+  line-height: 24px;
+  text-align: center;
+  color: #fff;
+  border: 1px solid #005B97;
+  border-radius: 3px;
+  float: right;
+  padding: 0 4%;
+}
+.gamco-login:hover {
+  background-color: #fff;
+  color: #005b97;
+}
+
+div.open-account {
+  background-color: #fff;
+  font-family: 'Gotham Book';
+  letter-spacing: 0.8px;
+  font-weight: 900;
+  width: auto;
+  height: 24px;
+  line-height: 24px;
+  text-align: center;
+  color: #005b97;
+  border: 1px solid #00aeef;
+  border-radius: 3px;
+  /* float: left; */
+  margin-left: 1%;
+  padding: 0 4%;
+}
+.open-account:hover {
+  background-color: #00aeef;
+  color: #fff;
+}
+.open-account:hover a {
+  color: #fff;
+}
+
+@media only screen and (max-width: 450px) {
+  div#our-company-sites {
+    margin-left: 1%;
+    font-size: 12px;
+  }
+
+  .fund-navbar-responsive-item {
+    font-size: 12px;
+  }
+
+  .log-in {
+    padding-top: 4px;
+    /* padding-left: 32px; */
+    font-size: 8px;
+    color: black;
+    display: none;
+  }
+
+  .log-in-gamco {
+    display: none;
+  }
+
+  .log-in-mobile {
+    padding-top: 4px;
+    /* padding-left: 32px; */
+    font-size: 8px;
+    color: black;
     display: inline-block;
-    width: auto;
-    margin-right: 1%;
   }
-  
-  .pm-strat-selector .strat-btn {
-    font-size: 110%;
+
+  .log-in-gamco-mobile {
+    padding-top: 4px;
+    /* padding-left: 32px; */
+    font-size: 8px;
+    color: black;
+    display: inline-block;
+    float: right;
   }
-  
-  .pm-strat-selector .strat-btn hr.underline-active.strat-underline{
-    width: 30px;
+
+  div.existing-client, div.gamco-login, div.open-account {
+    border-radius: 0px;
+    padding-left: 4px;
+    padding-right: 4px;
+    font-size: 8px;
+    letter-spacing: 0.2px
   }
-  
-  @media only screen and (min-width: 1400px) {
-    #gamco-team-profile {
-      padding: 0 10% 2%;
-    }
-  
-    .gamco-team-header-text {
-      padding-left: 10%;
-    }
+}
+
+@media only screen and (max-width: 370px) {
+  div.country-container {
+    display: none;
   }
-  
-  @media only screen and (max-width: 1120px) {
-    .gamco-pm-card {
-      background-color: #005b97;
-      width: 23%;
-      transform: none;
-    }
-  
-    .gamco-team-card {
-      background-color: #005b97;
-      width: 31%;
-      transform: none;
-    }
-  
-    .gamco-team-overlay {
-      top: 70%;
-    }
-  
-    .gamco-team-name {
-      font-size: 135%;
-    }
-  
-    .gamco-team-card .gamco-team-overlay .gamco-team-name {
-      font-size: 30px;
-    }
-  
-    .gamco-team-img {
-      opacity: .5;
-    }
-  
-    .gamco-team-overlay {
-      color: white;
-    }
-  
-    .gamco-team-name {
-      color: white;
-      opacity: 1;
-    }
-  
-    .gamco-pm-title {
-      color: white;
-      opacity: 1;
-    }
-  
-    .gamco-pm-card:hover .gamco-team-img {
-      transform: none;
-      opacity: 1;
-    }
-  
-    .gamco-pm-card:hover .gamco-team-name {
-      opacity: 0;
-    }
-  
-    .gamco-pm-card:hover .gamco-pm-title {
-      opacity: 0;
-    }
-  
-    .gamco-team-card:hover .gamco-team-img {
-      transform: none;
-      opacity: 1;
-    }
-  
-    .gamco-team-card:hover .gamco-team-name {
-      opacity: 0;
-    }
-  }
-  
-  @media only screen and (max-width: 850px) {
-    .gamco-pm-card {
-      width: 31%;
-    }
-  
-    .gamco-team-card {
-      width: 48%;
-    }
-  }
-  
-  @media only screen and (max-width: 550px) {
-  
-    .gamco-pm-card {
-      width: 48%;
-    }
-  
-    #gamco-prof-team-name {
-      display: block;
-    }
-  
-    #gamco-profile-img-container.pm-img-container, #gamco-profile-img-container.team-img-container {
-      width: 100%;
-      margin: 10px 0;
-    }
-  
-    #gamco-team-data {
-      width: 100%;
-      margin-top: 20px;
-      display: block;
-    }
-  
-    #gamco-pm-data {
-      width: 100%;
-      margin-top: 20px;
-      display: block;
-    }
-  
-    .gamco-team-card {
-      width: 100%;
-    }
-  
-    .gamco-team-img {
-      /* height: 80%; */
-      opacity: .3;
-    }
-  
-    .gamco-team-card:hover .gamco-team-img {
-      opacity: 1;
-    }
-  
-  
-    .gamco-team-logo {
-      opacity: 1;
-    }
-  
-    .gamco-team-card:hover .gamco-team-logo {
-      opacity: 0;
-    }
-  
-    .gamco-team-name {
-      opacity: 1;
-    }
-  
-    .gamco-pm-title {
-      opacity: 1;
-    }
-  
-    .gamco-team-card:hover .gamco-team-name {
-      opacity: 0;
-    }
-  
-    .gamco-team-card:hover .gamco-pm-title {
-      opacity: 0;
-    }
-  
-    /* PMs */
-  
-    .gamco-pm-card:hover .gamco-team-img {
-      opacity: 1;
-    }
-  
-  
-    .gamco-pm-card:hover .gamco-team-logo {
-      opacity: 0;
-    }
-  
-    .gamco-pm-card:hover .gamco-team-name {
-      opacity: 0;
-    }
-  
-  }
+
+}
+/* END ACCOUNT ACCESS BUTTONS */
