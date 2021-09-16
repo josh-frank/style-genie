@@ -1,14 +1,3 @@
-const cssParser = require( "css" );
-
-// const toArray = parsedCss => {
-//     return Object.keys( parsedCss ).reduce( ( result, selector ) => {
-//         console.log( selector[ 0 ] );
-//         return selector[ 0 ] === "@" ? result : [ ...result, [ selector, `${ selector } {
-//             ${ parsedCss[ selector ] }
-//         }` ] ];
-//     }, [] );
-// };
-
 const joinRules = ( rule, completeStyle, selector ) => completeStyle[ selector ] = ( completeStyle[ selector ] || "" ) + rule.declarations.reduce( ( completeRule, { property, value } ) => property && value ? [ ...completeRule, `${ property }: ${ value };` ] : completeRule, [] ).join( " " );
 
 const addBlockToObject = ( selector, stylesObject, blockToAdd ) => stylesObject[ selector ] = ( stylesObject[ selector ] || "" ) + blockToAdd;
@@ -35,7 +24,7 @@ exports.parse = css => {
             return completeMediaRule;
         }, {} );
         Object.keys( mediaObject ).forEach( mediaSelector => {
-            mergeWithMatchingSelectors( mediaObject, mediaSelector );
+            mergeWithMatchingSelectors( { ...mediaObject }, mediaSelector );
             addBlockToObject( mediaSelector, stylesObject, ` @media ${ rule.media } { ${ mediaObject[ mediaSelector ] } }` )
         } );
     } );
