@@ -5,7 +5,7 @@ const addBlockToObject = ( selector, stylesObject, blockToAdd ) => stylesObject[
 const mergeWithMatchingSelectors = ( stylesObject, selector ) => {
     for ( let otherSelector of Object.keys( stylesObject ).filter( otherSelector => otherSelector !== selector ) ) {
         if ( otherSelector.match( `${ selector }[.#:\[\\s]+` ) ) {
-            addBlockToObject( selector, stylesObject, ` ${ otherSelector.replace( selector, "&" ) } { ${ stylesObject[ otherSelector ]} }` );
+            addBlockToObject( selector, stylesObject, ` ${ otherSelector.replace( selector, "&" ) } { ${ stylesObject[ otherSelector ] } }` );
             delete stylesObject[ otherSelector ];
         }
     }
